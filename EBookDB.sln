@@ -12,5 +12,6 @@ Global
 		{F760F9CC-DE8C-4598-8440-C1617506616E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F760F9CC-DE8C-4598-8440-C1617506616E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F760F9CC-DE8C-4598-8440-C1617506616E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F760F9CC-DE8C-4598-8440-C1617506616E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
