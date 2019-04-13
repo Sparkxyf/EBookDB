@@ -23,6 +23,9 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Register","Index","Register")</li>
+                    <li>@Html.ActionLink("Login","Index","Login")</li>
+                    <li>@Html.ActionLink("Information","Index","Information")</li>
                 </ul>
             </div>
         </div>
@@ -31,6 +34,7 @@
         @RenderBody()
         <hr />
         <footer>
+            <p>欢迎 : @ViewBag.UserNickName</p>
             <p>&copy; @DateTime.Now.2019 - My ASP.NET Application</p>
         </footer>
     </div>

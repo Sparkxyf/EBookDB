@@ -1,0 +1,33 @@
+﻿@*
+    这是登录页面
+*@
+@{
+    ViewBag.Title = "Login";
+}
+@model EBookDB.Models.UserLogin
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post, new { id = "NAME", name = "NAME" }))
+{
+    <strong>用户名</strong><br />
+    @Html.EditorFor(model => model.UserName);<br />
+    <strong>密码</strong><br />
+    @Html.EditorFor(model => model.Password);<br />
+    <p>
+        <input type="button" value="登录" onclick="document.NAME.submit()" />
+        @if(ViewBag.LoginType < 0)
+        {
+            <script language="javascript">
+                alert("用户名不存在或密码错误，请重新输入");
+            </script>
+        }
+        @if (ViewBag.LoginType > 0)
+        {
+            <script language="javascript">
+               
+            </script>
+        }
+    </p>
+
+}
+

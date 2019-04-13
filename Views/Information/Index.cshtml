@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model EBookDB.Models.UserInformation
+
+@{
+    var deptSelectItems = (List<SelectListItem>)ViewData["deptSelectItems"];
+}
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "Information", FormMethod.Post, new { id = "NAME", name = "NAME" }))
+{
+    <p>
+        <h1>你的昵称</h1><br />
+        @Html.EditorFor(model => model.NickName)<br />
+        <h1>你的性别</h1><br />
+        @Html.DropDownList("Sex", deptSelectItems)<br />
+        <h1>你的所处地</h1><br />
+        @Html.EditorFor(model => model.Location)<br />
+
+        <input id="Button1" type="button" value="确认更改" onclick="document.NAME.submit()" />
+        @if (ViewBag.Changed == 1)
+        {
+            <script language="javascript">
+                alert("修改成功！");
+            </script>
+
+        }
+    </p>
+}
+@{
+    ViewBag.Changed = 0;
+}
+
