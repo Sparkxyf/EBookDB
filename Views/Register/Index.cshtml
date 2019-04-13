@@ -1,0 +1,48 @@
+﻿@*
+    这是注册页面
+*@
+
+@model EBookDB.Models.UserRegister
+@{
+    ViewBag.Title = "Register";
+
+}
+
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+@using (Html.BeginForm("Index", "Register", FormMethod.Post, new { id = "NAME", name = "NAME" }))
+{
+    <strong>用户名</strong><br />
+    @Html.EditorFor(model => model.UserName);<br />
+    <strong>密码</strong><br />
+    @Html.EditorFor(model => model.Password);<br />
+    <strong>确认密码</strong><br />
+    @Html.EditorFor(model => model.EnsurePassword);<br />
+    <p>
+        
+        <input type="button" value="注册" onclick="document.NAME.submit()" />
+        @if (ViewBag.RegisterType == "Finish")
+        {
+            <script language="javascript">
+                alert("注册成功！跳转到登录页面。");
+                window.location.href ='/Login';
+            </script>
+        }
+        @if(ViewBag.RegisterType == "Exist")
+        {
+            <script language="javascript">
+                alert("用户名已存在");
+            </script>
+        }
+        @if(ViewBag.RegisterType == "NotMatch")
+        {
+            <script language="javascript">
+                alert("两次密码输入不一致");
+            </script>
+        }
+    </p>
+
+}
+
+
+
